@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 using UnityEngine.UI;
+<<<<<<< HEAD
 using Cinemachine;
+=======
+>>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
 
 public class GameController : MonoBehaviour
 {
@@ -20,20 +23,26 @@ public class GameController : MonoBehaviour
     [SerializeField] private Animator skipAnim;
     [SerializeField] private float skipLength;
     private float currentSkip = 0;
+<<<<<<< HEAD
     [SerializeField] private GameObject gameOverText;
     [SerializeField] private CinemachineVirtualCamera enemyLookCamera;
     [SerializeField] private CinemachineFreeLook thirdPersonCamera;
+=======
+>>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
 
     //Stage 0
     private bool introScene = false;
     [SerializeField] private PlayableDirector introSceneTimeline;
 
+<<<<<<< HEAD
     public bool caughtScreen;
     [HideInInspector] public Transform checkPoint;
 
     private float cameraXSpeed;
     private float cameraYSpeed;
 
+=======
+>>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
     // Start is called before the first frame update
     void Start()
     {
@@ -41,10 +50,13 @@ public class GameController : MonoBehaviour
         player.transform.rotation = playerStartTransforms[stage].rotation;
         stage = PlayerPrefs.GetInt("Stage");
         setGameObjectsActive();
+<<<<<<< HEAD
         checkPoint = playerStartTransforms[stage];
 
         cameraXSpeed = thirdPersonCamera.m_XAxis.m_MaxSpeed;
         cameraYSpeed = thirdPersonCamera.m_YAxis.m_MaxSpeed;
+=======
+>>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
     }
 
     // Update is called once per frame
@@ -78,6 +90,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     private void LateUpdate()
     {
         if (caughtScreen)
@@ -110,6 +123,8 @@ public class GameController : MonoBehaviour
         }
     }
 
+=======
+>>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
     private void setGameObjectsActive()
     {
         if (stage == 0)
@@ -121,6 +136,7 @@ public class GameController : MonoBehaviour
         }
     }
 
+<<<<<<< HEAD
     public IEnumerator hideCinematicBars()
     {
         cinematicBars.SetTrigger("Exit");
@@ -131,6 +147,13 @@ public class GameController : MonoBehaviour
         yield return new WaitForSeconds(1.5F);
         cinematicBars.gameObject.SetActive(false);
         gameOverText.SetActive(false);
+=======
+    private IEnumerator hideCinematicBars()
+    {
+        cinematicBars.SetTrigger("Exit");
+        yield return new WaitForSeconds(1.5F);
+        cinematicBars.gameObject.SetActive(false);
+>>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
     }
 
     private IEnumerator waitEndCutScene()
@@ -150,10 +173,13 @@ public class GameController : MonoBehaviour
         player.canMove = true;
         currentTimeline = null;
     }
+<<<<<<< HEAD
 
     public void playerCaught()
     {
         cinematicBars.gameObject.SetActive(true);
         gameOverText.SetActive(true);
     }
+=======
+>>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
 }

@@ -3,11 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Animations;
+<<<<<<< HEAD
 using Cinemachine;
 
 public class EnemyController : MonoBehaviour
 {
     private float alertLevel = 0;
+=======
+
+public class EnemyController : MonoBehaviour
+{
+    [Range(0.0f, 10f)] [SerializeField] float alertLevel = 0;
+>>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
 
     [SerializeField] float maxAlertLevel;
     [SerializeField] float fallRate;
@@ -24,21 +31,28 @@ public class EnemyController : MonoBehaviour
     [SerializeField] Slider UISlider;
     private Animator UIAnimator;
 
+<<<<<<< HEAD
     private PlayerController player;
     private CinemachineVirtualCamera enemyLookCamera;
     private GameObject mainCamera;
     private GameController gameController;
 
     private bool caughtScreen;
+=======
+    [SerializeField] GameObject player;
+>>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
 
     // Start is called before the first frame update
     void Start()
     {
         UIAnimator = UICanvas.GetComponent<Animator>();
+<<<<<<< HEAD
         player = FindObjectOfType<PlayerController>();
         enemyLookCamera = GameObject.FindGameObjectWithTag("EnemyLookCamera").GetComponent<CinemachineVirtualCamera>();
         mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
         gameController = FindObjectOfType<GameController>();
+=======
+>>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
     }
 
     // Update is called once per frame
@@ -69,6 +83,10 @@ public class EnemyController : MonoBehaviour
         if(alertLevel >= maxAlertLevel)
         {
             caught();
+<<<<<<< HEAD
+=======
+            alertLevel = 0;
+>>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
         }
 
         if(alertLevel > 0)
@@ -78,7 +96,11 @@ public class EnemyController : MonoBehaviour
                 UIAnimator.SetBool("Active", true);
             }
             UISlider.value = alertLevel / maxAlertLevel;
+<<<<<<< HEAD
             UICanvas.transform.LookAt(new Vector3(mainCamera.transform.position.x, UICanvas.transform.position.y, mainCamera.transform.position.z));
+=======
+            UICanvas.transform.LookAt(new Vector3(player.transform.position.x, UICanvas.transform.position.y, player.transform.position.z));
+>>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
         }
         else
         {
@@ -91,6 +113,7 @@ public class EnemyController : MonoBehaviour
 
     private void caught()
     {
+<<<<<<< HEAD
         if (!gameController.caughtScreen && !caughtScreen)
         {
             enemyLookCamera.transform.position = mainCamera.transform.position;
@@ -108,5 +131,8 @@ public class EnemyController : MonoBehaviour
             alertLevel = 0;
             caughtScreen = false;
         }
+=======
+        Debug.Log("You were caught");
+>>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
     }
 }
