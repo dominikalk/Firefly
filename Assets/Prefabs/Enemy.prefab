@@ -627,10 +627,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e20feacb04cbfb47834f5e9e82a0907, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-=======
-  alertLevel: 0
->>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
   maxAlertLevel: 10
   fallRate: 2
   proxLevel1: 0
@@ -641,14 +637,10 @@ MonoBehaviour:
   prox3Rate: 15
   UICanvas: {fileID: 610342260089858908}
   UISlider: {fileID: 610342260488890551}
-<<<<<<< HEAD
   UIAnimator: {fileID: 610342260089858905}
   player: {fileID: 0}
   enemyLookCamera: {fileID: 0}
   mainCamera: {fileID: 0}
-=======
-  player: {fileID: 0}
->>>>>>> de9788a82bc808a3787eea5be92a82b30c02d9ee
 --- !u!1 &610342260446580455
 GameObject:
   m_ObjectHideFlags: 0
